@@ -1,0 +1,69 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+}
+
+#expense-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+#expense-form input, #expense-form select, #expense-form button {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.category-Food { background-color: orange; }
+.category-Transport { background-color: blue; color: #fff; }
+.category-Entertainment { background-color: purple; color: #fff; }
+.category-Education { background-color: green; color: #fff; }
+.category-Other { background-color: gray; color: #fff; }
+
+.delete-btn {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+#budget-alert {
+    padding: 10px;
+    background-color: #f44336;
+    color: white;
+    text-align: center;
+    border-radius: 4px;
+}
+
+.hidden {
+    display: none;
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Expense Tracker</title>
+    <link rel="stylesheet" href="personalExpenseTracker.css">
+</head>
+<body>
+    <h1>Personal Expense Tracker</h1>
+
+    <div class="container">
+        <form id="expense-form">
+            <input type="text" id="expense-name" placeholder="Expense Name" required>
+            <input type="number" id="expense-amount" placeholder="Amount (₦)" required>
+            <select id="expense-category" required>
+                <option value="">Select Category</option>
+                <option value="Food">Food</option>
+                <option value="Transport">Transport</option>
+                <option value="Entertainment">Entertainment</option>
+                <option value="Education">Education</option>
+                <option value="Other">Other</option>
+            </select>
+            <input type="date" id="expense-date" required>
+            <button type="submit">Add Expense</button>
+        </form>
+
+        <div class="controls">
+            <div>
+                <label for="budget-limit">Monthly Budget (₦):</label>
+                <input type="number" id="budget-limit">
+            </div>
+            <div>
+                <label for="filter-category">Filter by Category:</label>
+                <select id="filter-category">
+                    <option value="All">All</option>
+                    <option value="Food">Food</option>
+                    <option value="Transport">Transport</option>
+                    <option value="Entertainment">Entertainment</option>
+                    <option value="Education">Education</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="summary">
+            <h3>Total Spent: <span id="total-spent">0</span>₦</h3>
+            <div id="budget-alert" class="hidden"></div>
+        </div>
+
+        <table id="expense-table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Amount (₦)</th>
+                    <th>Category</th>
+                    <th>Date</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Expense rows will be added here by JavaScript -->
+            </tbody>
+        </table>
+    </div>
+
+    <script src="/personalExpenseTracker/personalExpenseTracker.js"></script>
+</body>
+</html>
