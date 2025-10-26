@@ -1,0 +1,2 @@
+This project features simple web applications designed to help users manage their personal activities. It includes an expense tracker for monitoring spending against a budget limit and providing alerts, as well as a to-do list for organizing and tracking tasks with different priorities. All user data is automatically saved directly within the browser, ensuring persistence across sessions.
+

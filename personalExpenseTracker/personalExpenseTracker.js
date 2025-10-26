@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
         renderExpenses();
         expenseForm.reset();
     });
-//b run when click the delete button
+//run when click the delete button
     expenseTableBody.addEventListener('click', (e) => {
         if (e.target.classList.contains('delete-btn')) {
             const index = e.target.dataset.index;

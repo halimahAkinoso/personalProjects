@@ -23,7 +23,7 @@
 
   let students = loadStudents();
 
-  // Utility: compute average of numeric values, returns number with 2 decimals
+  //compute average of numeric values, returns number with 2 decimals
   function computeAverage(scores) {
 // Converts scores to numbers and removes any non-numeric ones
 
