@@ -7,7 +7,6 @@ import ExpenseList from '../src/components/ExpenseList';
 import '../src/components/ExpenseTracker.css';
 
 
-
 function App () {
 
 const [expenses, setExpenses] = useState([
@@ -83,64 +82,73 @@ const [expenses, setExpenses] = useState([
     setFilter(category);
   };
 
-//jhkujunhom;nbom imkoiuytlfixu
+
   return (
- 
-    <div className="expense-tracker-app">
-      <h1>Expense Tracker</h1>
-      {/* Add Expense Form */}
-      <form onSubmit={isEditing ? handleUpdateExpense : handleAddExpense}>
-        <input
-          type="text"
-          placeholder="Description"
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
-        />
-        <input
-          type="number"
-          placeholder="Amount (N)"
-          value={amount}
-          onChange={(e) => setAmount(e.target.value)}
-        />
-        <select value={category} onChange={(e) => setCategory(e.target.value)}>
-          <option value="Food">Food</option>
-          <option value="Transport">Transport</option>
-          <option value="Bills">Bills</option>
-          <option value="Entertainment">Entertainment</option>
-          <option value="Others">Others</option>
-        </select>
-        <button type="submit">{isEditing ? 'Update Expense' : 'Add Expense'}</button>
-      </form>
+  <div className="app">
+    {/* Header at the top */}
+    <Header />
 
-      {/* Filter Buttons */}
-      <div>
-        <button onClick={() => handleFilter('All')}>All</button>
-        <button onClick={() => handleFilter('Food')}>Food</button>
-        <button onClick={() => handleFilter('Transport')}>Transport</button>
-        <button onClick={() => handleFilter('Bills')}>Bills</button>
-        <button onClick={() => handleFilter('Entertainment')}>Entertainment</button>
-        <button onClick={() => handleFilter('Others')}>Others</button>
-      </div>
+    {/* Stats summary below header */}
+    <ExpenseStats expenses={expenses} />
 
-      {/* Expense List */}
-      <ul>
-        {filteredExpenses.map(expense => (
-          <li key={expense.id} className={`expense-item ${expense.category.toLowerCase()}`}>
-            <div>
-              <p>{expense.description}</p>
-              <p>N{expense.amount.toFixed(2)}</p>
-              <p>{expense.category}</p>
-              <p>{expense.date}</p>
-            </div>
-            <div>
-              <button onClick={() => handleEditClick(expense)}>Edit</button>
-              <button onClick={() => handleDeleteExpense(expense.id)}>Delete</button>
-            </div>
-          </li>
-        ))}
-      </ul>
+    {/* Add Expense Form */}
+    <form className="add-expense-form" onSubmit={isEditing ? handleUpdateExpense : handleAddExpense}>
+      <input
+        type="text"
+        placeholder="Description"
+        value={description}
+        onChange={(e) => setDescription(e.target.value)}
+      />
+      <input
+        type="number"
+        placeholder="Amount (N)"
+        value={amount}
+        onChange={(e) => setAmount(e.target.value)}
+      />
+      <select className="category-select" value={category} onChange={(e) => setCategory(e.target.value)}>
+        <option value="Food">Food</option>
+        <option value="Transport">Transport</option>
+        <option value="Bills">Bills</option>
+        <option value="Entertainment">Entertainment</option>
+        <option value="Others">Others</option>
+      </select>
+      <button type="submit">{isEditing ? 'Update Expense' : 'Add Expense'}</button>
+    </form>
+
+    {/* Filter Buttons */}
+    <div className="category-filter">
+      <button onClick={() => handleFilter('All')}>All</button>
+      <button onClick={() => handleFilter('Food')}>Food</button>
+      <button onClick={() => handleFilter('Transport')}>Transport</button>
+      <button onClick={() => handleFilter('Bills')}>Bills</button>
+      <button onClick={() => handleFilter('Entertainment')}>Entertainment</button>
+      <button onClick={() => handleFilter('Others')}>Others</button>
     </div>
-  )
-}
+
+    {/* Expense List */}
+    <ul className="expense-list">
+      {filteredExpenses.map((expense) => (
+        <li key={expense.id} className={`expense-item ${expense.category.toLowerCase()}`}>
+          <div className="expense-details">
+            <p className="expense-description">{expense.description}</p>
+            <p className="expense-amount">N{expense.amount.toFixed(2)}</p>
+            <p className="expense-meta">{expense.category}</p>
+            <p className="expense-meta">{expense.date}</p>
+          </div>
+          <div className="expense-actions">
+            <button className="edit-btn" onClick={() => handleEditClick(expense)}>
+              Edit
+            </button>
+            <button className="delete-btn" onClick={() => handleDeleteExpense(expense.id)}>
+              Delete
+            </button>
+          </div>
+        </li>
+      ))}
+    </ul>
+  </div>
+);
+
+  }
 
 export default App

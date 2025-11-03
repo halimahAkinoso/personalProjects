@@ -97,7 +97,7 @@ header p {
   margin-bottom: 25px;
 }
 
-.expense-stats h3 {
+.expense-stats p {
   font-size: 1rem;
   color: #333;
   margin: 0;
@@ -108,6 +108,49 @@ header p {
   list-style: none;
   padding: 0;
   margin: 0;
+}
+
+/* .expense-item.food {
+  background-color: rgb(0, 200, 255);
+}
+.expense-item.transport {
+  background-color: blue;
+}
+.expense-item.bills {
+  background-color: green;
+}
+.expense-item.entertainment {
+  background-color: purple;
+}
+.expense-item.others {
+  background-color: gray;
+} */
+/* Style the select itself */
+.category-select {
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+}
+
+/* Style each option */
+.option-food {
+  background-color: #ffe5e5; /* light red */
+}
+
+.option-transport {
+  background-color: #e5f0ff; /* light blue */
+}
+
+.option-bills {
+  background-color: #e5ffe5; /* light green */
+}
+
+.option-entertainment {
+  background-color: #f3e5ff; /* light purple */
+}
+
+.option-others {
+  background-color: #f0f0f0; /* light gray */
 }
 
 .expense-item {
@@ -124,6 +167,40 @@ header p {
 
 .expense-item:hover {
   background-color: #f2f6ff;
+}
+/* filter */
+
+.category-filter {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.category-filter button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  color: white;
+}
+
+/* Category-specific colors */
+.category-filter button:nth-child(1) { background-color: #6c757d; } /* All */
+.category-filter button:nth-child(2) { background-color: #ff4d4d; } /* Food */
+.category-filter button:nth-child(3) { background-color: #4da6ff; } /* Transport */
+.category-filter button:nth-child(4) { background-color: #66cc66; } /* Bills */
+.category-filter button:nth-child(5) { background-color: #cc99ff; } /* Entertainment */
+.category-filter button:nth-child(6) { background-color: #999999; } /* Others */
+
+.category-filter button:hover {
+  opacity: 0.85;
+}
+.category-filter .active {
+  box-shadow: 0 0 0 2px white, 0 0 0 4px #007bff;
 }
 
 /* 📅 EXPENSE DETAILS */

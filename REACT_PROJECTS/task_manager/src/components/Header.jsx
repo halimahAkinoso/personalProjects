@@ -8,7 +8,7 @@ function Header() {
   
   return (
     <header className="header">
-      <h1>📝 My Task Manager</h1>
+      <h1> Solace Task Manager</h1>
       <p>{today}</p>
     </header>
   );

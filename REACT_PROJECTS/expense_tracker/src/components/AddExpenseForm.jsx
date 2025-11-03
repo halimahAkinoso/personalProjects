@@ -28,10 +28,11 @@ function AddExpenseForm({ onAddExpense }) {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="add-expense-form" onSubmit={handleSubmit}>
       <input type="text" value={description} onChange={(e) => setDescription(e.target.value)} placeholder="Description" />
       <input type="number" value={amount} onChange={(e) => setAmount(e.target.value)} placeholder="Amount" />
       <select value={category} onChange={(e) => setCategory(e.target.value)}>
+        
         <option value="Food">Food</option>
         <option value="Transport">Transport</option>
         <option value="Bills">Bills</option>
